@@ -5,6 +5,6 @@ app.get('/hello', function (req, res) {
   res.send('Hello World!adasd');
 });
 
-app.listen(3001, function () {
-  console.log('Example app listening on port 3001!');
+app.listen(process.env.PORT || 3001, function () {
+  console.log('bronode running on 3001!');
 });
