@@ -5,7 +5,8 @@ var stormpath = require('express-stormpath');
 app.use(express.static('client/build'));
 
 app.use(stormpath.init(app, {
-  website: true
+  website: true,
+  web: {register: {enabled: false}}
 }));
 
 app.get('/hello', (req, res) => {
