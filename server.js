@@ -1,13 +1,20 @@
 var express = require('express');
 var app = express();
+var stormpath = require('express-stormpath');
 
 app.use(express.static('client/build'));
 
-app.get('/hello', function (req, res) {
+app.use(stormpath.init(app, {
+  website: true
+}));
+
+app.get('/hello', (req, res) => {
   res.send('Hello World!adasd');
 });
 
 const port = process.env.PORT || 3001;
-app.listen(port, function () {
-  console.log('bronode running on '+port);
+app.on('stormpath.ready', () => {
+  app.listen(port, () => {
+    console.log('bronode running on ' + port);
+  });
 });
