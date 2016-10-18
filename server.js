@@ -6,7 +6,7 @@ app.use(express.static('client/build'));
 
 app.use(stormpath.init(app, {
   website: true,
-  web: {register: {enabled: false}
+  web: {register: {enabled: false},
         logout:   {enabled: true,
                    uri: '/logout',
                    nextUri: '/'
