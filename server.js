@@ -9,15 +9,10 @@ app.use(stormpath.init(app, {
   web: {register: {enabled: false},
         logout:   {enabled: true,
                    uri: '/logout',
-                   nextUri: '/'
-  }}
-}));
+                   nextUri: '/'}}}));
 
 app.get('/hello', (req, res) => {
-  res.send('Hello World!adasd');
-});
-
-app.post()
+  res.send('Hello World!adasd');});
 
 const port = process.env.PORT || 3001;
 app.on('stormpath.ready', () => {
