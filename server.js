@@ -11,7 +11,7 @@ app.use(stormpath.init(app, {
     logout: {
       enabled: true,
       uri: '/logout',
-      nextUri: '/index.htmlS'
+      nextUri: '/index.html'
     }
   }
 }));
