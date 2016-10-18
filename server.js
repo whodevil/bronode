@@ -16,13 +16,13 @@ app.use(stormpath.init(app, {
   }
 }));
 
-app.get('/hello', (req, res) => {
+app.get('/hello', function(req, res) {
   res.send('Hello World!');
 });
 
 const port = process.env.PORT || 3001;
-app.on('stormpath.ready', () => {
-  app.listen(port, () => {
+app.on('stormpath.ready', function() {
+  app.listen(port, function() {
     console.log('bronode running on ' + port);
   });
 });
