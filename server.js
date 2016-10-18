@@ -6,13 +6,19 @@ app.use(express.static('client/build'));
 
 app.use(stormpath.init(app, {
   website: true,
-  web: {register: {enabled: false},
-        logout:   {enabled: true,
-                   uri: '/logout',
-                   nextUri: '/'}}}));
+  web: {
+    register: { enabled: false },
+    logout: {
+      enabled: true,
+      uri: '/logout',
+      nextUri: '/index.htmlS'
+    }
+  }
+}));
 
 app.get('/hello', (req, res) => {
-  res.send('Hello World!adasd');});
+  res.send('Hello World!');
+});
 
 const port = process.env.PORT || 3001;
 app.on('stormpath.ready', () => {
