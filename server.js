@@ -11,18 +11,20 @@ app.use(stormpath.init(app, {
     logout: {
       enabled: true,
       uri: '/logout',
-      nextUri: '/index.html'
+      nextUri: '/'
     }
   }
 }));
 
-app.get('/hello', function(req, res) {
+app.get('/hello', (req, res) => {
   res.send('Hello World!');
 });
 
+// app.get('/secured', stormpath.apiAuthenticationRequired, )
+
 const port = process.env.PORT || 3001;
-app.on('stormpath.ready', function() {
-  app.listen(port, function() {
+app.on('stormpath.ready', () => {
+  app.listen(port, () => {
     console.log('bronode running on ' + port);
   });
 });
