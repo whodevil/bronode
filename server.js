@@ -20,7 +20,7 @@ app.get('/hello', (req, res) => {
   res.send('Hello World!');
 });
 
-app.post('/messages', stormpath.apiAuthenticationRequired,(req, res) => {
+app.post('/messages',(req, res) => {
   console.log("this is a message " +req);
 });
 
