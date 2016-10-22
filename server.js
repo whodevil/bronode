@@ -21,7 +21,7 @@ app.get('/hello', (req, res) => {
 });
 
 app.post('/messages',(req, res) => {
-  console.log("this is a message " +Object.keys(req));
+  console.log("this is a message " + Object.keys(req) + "\n" + req.rawHeaders);
   res.send('OK');
 });
 
