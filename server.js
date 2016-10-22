@@ -21,7 +21,8 @@ app.get('/hello', (req, res) => {
 });
 
 app.post('/messages',(req, res) => {
-  console.log("this is a message " +req);
+  console.log("this is a message " +Object.keys(req));
+  res.send('OK');
 });
 
 const port = process.env.PORT || 3001;
