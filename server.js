@@ -20,7 +20,9 @@ app.get('/hello', (req, res) => {
   res.send('Hello World!');
 });
 
-// app.get('/secured', stormpath.apiAuthenticationRequired, )
+app.post('/messages', stormpath.apiAuthenticationRequired,(req, res) => {
+  console.log("this is a message " +req);
+});
 
 const port = process.env.PORT || 3001;
 app.on('stormpath.ready', () => {
