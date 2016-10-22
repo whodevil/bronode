@@ -6,7 +6,7 @@ sort of trying to be a personal instagram. Instagram is dead to me since
 they turned to the dark side and added facebook's bullshit 
 ```show you what you want to see algorithm```. Facebook, I love the libraries 
 you make, but damn it I hate that you wont show me stuff in order like twitter.
-I fully awknoledge this readme makes me sound like a total ass hole.
+I fully acknowledge this readme makes me sound like a total ass hole.
 
 ## SaaS services used
 - Heroku for hosting
