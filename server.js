@@ -23,7 +23,7 @@ app.get('/hello', (req, res) => {
 });
 
 app.post('/messages', upload.any(), (req, res) => {
-  console.log("this is a message " + request.body );
+  console.log("this is a message " + req.body );
   res.send('OK');
 });
 
