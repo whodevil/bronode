@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 var stormpath = require('express-stormpath');
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
 
 app.use(express.static('client/build'));
 
@@ -20,8 +22,8 @@ app.get('/hello', (req, res) => {
   res.send('Hello World!');
 });
 
-app.post('/messages',(req, res) => {
-  console.log("this is a message " + Object.keys(req) + "\n" + req.rawHeaders);
+app.post('/messages', upload.single('photo'), (req, res) => {
+  console.log("this is a message " + request.body );
   res.send('OK');
 });
 
