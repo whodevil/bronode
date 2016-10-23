@@ -22,7 +22,7 @@ app.get('/hello', (req, res) => {
   res.send('Hello World!');
 });
 
-app.post('/messages', upload.single('photo'), (req, res) => {
+app.post('/messages', upload.any(), (req, res) => {
   console.log("this is a message " + request.body );
   res.send('OK');
 });
